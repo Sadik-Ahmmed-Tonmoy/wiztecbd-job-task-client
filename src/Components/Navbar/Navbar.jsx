@@ -14,7 +14,7 @@ const Navbar = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
   return (
-    <div className="sticky top-0 z-10">
+    <div className=" bg-white">
       {/* mobile */}
 
       {/* mobile screen end */}
@@ -51,7 +51,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </div>
+      
 
       {/* 2nd col */}
       <div className="border">
@@ -68,6 +68,7 @@ const Navbar = () => {
         </div>
       </div>
       {/* pc end*/}
+      </div>
     </div>
   );
 };
