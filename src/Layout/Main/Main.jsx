@@ -6,7 +6,7 @@ import {
   Menu,
   theme,
 } from "antd";
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import banner from "../../assets/Banner/banner.png";
 import Navbar from "../../Components/Navbar/Navbar";
 import SliderMenu from "../../Components/SliderMenu/SliderMenu";
@@ -109,6 +109,7 @@ const Main = () => {
         />
       </Link>
       <Footer />
+      <ScrollRestoration/>
     </div>
   );
 };
