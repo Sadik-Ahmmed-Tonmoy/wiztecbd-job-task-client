@@ -48,9 +48,8 @@ const Main = () => {
           </div>
         </Header>
         <div>
-          <Layout className="container mx-auto">
+          <Layout className="container mx-auto mt-8">
             <Sider
-              className="z-30"
               breakpoint="md"
               collapsedWidth="0"
               onBreakpoint={(broken) => {

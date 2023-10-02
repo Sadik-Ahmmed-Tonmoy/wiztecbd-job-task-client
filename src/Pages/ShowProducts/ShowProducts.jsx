@@ -19,9 +19,10 @@ const ShowProducts = () => {
   const handleShowLess = () => {
     setShowAllData(false);
   };
+  
   return (
     <div className="container">
-      <div className="flex justify-end mt-8 mb-8 sticky top-0 bg-white z-20">
+      <div className="flex justify-end mb-8">
         <Select
           defaultValue="Sort by Latest"
           className="h-10 w-[136px] "

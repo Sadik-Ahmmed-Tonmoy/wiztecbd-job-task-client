@@ -45,9 +45,9 @@ const SliderMenu = () => {
 
     return (
         <div className='ps-2 md:ps-0 lg:w-64 bg-white'>
-             <div className=" mt-11">
+             <div>
                   <div className="flex justify-between items-center text-black text-lg font-medium">
-                    <p>CATEGORY</p>{" "}
+                    <p className='pt-2'>CATEGORY</p>{" "}
                     <span>
                       <AiOutlinePlus />
                     </span>

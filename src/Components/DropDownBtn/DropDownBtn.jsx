@@ -21,12 +21,24 @@ const DropDownBtn = ({ title, items }) => {
       <div className="absolute top-7 -left-4 hidden pt-5 bg-transparent group-hover:block px-4">
         <ul
           data-aos="fade-up"
-          className="first-letter:space-y-4 bg-[#F5CCDC] shadow-2xl rounded-md group-hover:block px-4 py-2"
+          className="first-letter:space-y-4 bg-[#F5CCDC] shadow-2xl rounded-md group-hover:block px-4 py-2 z-20"
         >
+           <li className="my-2 w-52 rounded-md">
+                <NavLink
+                to={`/`}
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-600 font-bold" : ""
+                  }
+                >
+                 <span className="text-[#471D6B] capitalize">All Products</span>
+                </NavLink>
+              </li>
+          
           {items?.map((item, i) => (
             <Fade key={i} duration="1000">
               <li className="my-2 w-52 rounded-md">
                 <NavLink
+                to={`/products/${item}`}
                   className={({ isActive }) =>
                     isActive ? "text-blue-600 font-bold" : ""
                   }

@@ -7,7 +7,7 @@ import { BiShoppingBag } from "react-icons/bi";
 
 const Card = ({ product }) => {
   console.log(product);
-  const { category, description, image, price, title, rating } = product;
+  const {id, category, description, image, price, title, rating } = product;
   return (
     <div className="relative">
       <img className="absolute z-10" src={saleBG} alt="" />
