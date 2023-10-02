@@ -7,6 +7,7 @@ import { BsPerson } from "react-icons/bs";
 import DropDownBtn from "../DropDownBtn/DropDownBtn";
 import axios from "axios";
 import ClickDropDown from "../ClickDropDown/ClickDropDown";
+import CartFromLS from "../CartFromLS/CartFromLS";
 
 const Navbar = () => {
   const [categories, setCategories] = useState([])
@@ -103,10 +104,7 @@ const Navbar = () => {
               Account
             </p>
             <div className="border h-5 border-[#00000099]"></div>
-            <div className="badge border-[#F40F6F] bg-[#F40F6F] h-10 w-[123px] gap-1 text-white">
-              <BiShoppingBag />
-              Cart <span>(0)</span>
-            </div>
+            <CartFromLS/>
           </div>
         </div>
       

@@ -1,13 +1,30 @@
 import { Rate } from "antd";
-import React from "react";
+import React, { useContext } from "react";
 import { TbCurrencyTaka } from "react-icons/tb";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import saleBG from "../../assets/Banner/saleBG.png";
 import { BiShoppingBag } from "react-icons/bi";
+import { addToLocalStorage } from "../../utilities/addToLocalStorage";
+import Swal from "sweetalert2";
+import { DataContext } from "../../providers/DataProvider";
+import { deductQuantityFromLS } from "../../utilities/deductQuantityFromLS";
 
 const Card = ({ product }) => {
   // console.log(product);
   const {id, category, description, image, price, title, rating } = product;
+  const {refetch, setRefetch} = useContext(DataContext)
+  const handleAddToCart = (id) => {
+    addToLocalStorage(id)
+    setRefetch(!refetch)
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Item added successfully',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+
   return (
     <div className="relative">
       <img className="absolute z-10" src={saleBG} alt="" />
@@ -41,13 +58,13 @@ const Card = ({ product }) => {
           </div>
           <div className="flex flex-wrap gap-2 items-center justify-between mt-[18px] z-20">
             <div className="border rounded-md border-[#F40F6F] flex items-center">
-              <button className="px-3 py-2 text-[#F40F6F]"><AiOutlineMinus/></button>
+              <button onCanPlay={() => deductQuantityFromLS(id)} className="px-3 py-2 text-[#F40F6F]"><AiOutlineMinus/></button>
               <span className="border border-[#F40F6F] h-4 w-0"></span>
               <p className="px-3 py-2 text-black">0</p>
               <span className="border border-[#F40F6F] h-4 w-0"></span>
-              <button className="px-3 py-1 text-[#F40F6F]"><AiOutlinePlus/></button>
+              <button  onClick={() => handleAddToCart(id)} className="px-3 py-1 text-[#F40F6F]"><AiOutlinePlus/></button>
             </div>
-            <button className="text-xs text-[#F40F6F] rounded-md bg-[#FFBFCD] flex items-center gap-1 px-5 py-3">  <BiShoppingBag size={15}/>Add</button>
+            <button  onClick={() => handleAddToCart(id)} className="text-xs text-[#F40F6F] rounded-md bg-[#FFBFCD] flex items-center gap-1 px-5 py-3">  <BiShoppingBag size={15}/>Add</button>
           </div>
         </div>
       </div>
