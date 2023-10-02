@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
 import { useForm } from "react-hook-form";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -7,16 +7,80 @@ import { BiSearchAlt2, BiShoppingBag } from "react-icons/bi";
 import { BsPerson } from "react-icons/bs";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import DropDownBtn from "../DropDownBtn/DropDownBtn";
+import axios from "axios";
+import ClickDropDown from "../ClickDropDown/ClickDropDown";
 
 const Navbar = () => {
-  const phones = ["iPhone", "Samsung", "Xiaomi"];
+  const [categories, setCategories] = useState([])
+  useEffect(() => {
+    axios.get("https://fakestoreapi.com/products/categories").then((response) => {
+      setCategories(response.data)
+    })
+  }, [])
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
   return (
     <div className=" bg-white">
       {/* mobile */}
+      <div className="navbar block md:hidden text-black">
+        <div className="navbar-start">
+          <div className="dropdown z-10">
+            <label tabIndex={0} className="btn btn-ghost md:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52 bg-white"
+            >
+              <ul className=" bg-white w-56 rounded-box z-10">
+                <li>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "text-blue-600 font-bold" : ""
+                    }
+                    to={`/`}
+                  >
+                    Home
+                  </NavLink>
+                </li>
+               
+                <ClickDropDown title={"CATEGORIES"} items={categories} />
+                {/* <ClickDropDown title={"Laptop"} items={laptop} />
+                <ClickDropDown title={"Drones"} items={drones} />
+                <ClickDropDown title={"Accessories"} items={accessories} /> */}
+              </ul>
+            </ul>
+          </div>
+          <Link to={"/"}>
+            <img src={logo} alt="" />
+          </Link>
+        </div>
+        <div className="navbar-end">
+          <div className="flex rounded-full border border-black p-2">
+            {/* <Link to={"/login"}> */}
+                <BsPerson className="font-semibold text-black" size={20} />
+            {/* </Link> */}
 
+            {/* cart with drawer */}
+{/* <CartFromLS/> */}
+              {/* cart with drawer */}
+          </div>
+        </div>
+      </div>
       {/* mobile screen end */}
 
       {/* pc start*/}
@@ -57,7 +121,7 @@ const Navbar = () => {
       <div className="border">
         <div className="flex justify-between items-center container mx-auto">
           <div>
-              <DropDownBtn title={"CATEGORIES"} items={phones} />
+              <DropDownBtn title={"CATEGORIES"} items={categories} />
           </div>
 
           <div className="flex gap-4">

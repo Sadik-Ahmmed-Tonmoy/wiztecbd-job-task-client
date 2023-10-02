@@ -18,10 +18,10 @@ const DropDownBtn = ({ title, items }) => {
         <MdKeyboardArrowDown />
       </div>
 
-      <div className="w-1">
+      <div className="absolute top-7 -left-4 hidden pt-5 bg-transparent group-hover:block px-4">
         <ul
           data-aos="fade-up"
-          className="absolute top-12 left-0 hidden pt-1 border first-letter:space-y-4 bg-[#F5CCDC] shadow-2xl rounded-md group-hover:block px-4"
+          className="first-letter:space-y-4 bg-[#F5CCDC] shadow-2xl rounded-md group-hover:block px-4 py-2"
         >
           {items?.map((item, i) => (
             <Fade key={i} duration="1000">
@@ -31,7 +31,7 @@ const DropDownBtn = ({ title, items }) => {
                     isActive ? "text-blue-600 font-bold" : ""
                   }
                 >
-                 <span className="text-[#471D6B]">{item}</span>
+                 <span className="text-[#471D6B] capitalize">{item}</span>
                 </NavLink>
               </li>{" "}
             </Fade>
