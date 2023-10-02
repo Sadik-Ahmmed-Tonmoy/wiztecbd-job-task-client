@@ -6,7 +6,7 @@ import saleBG from "../../assets/Banner/saleBG.png";
 import { BiShoppingBag } from "react-icons/bi";
 
 const Card = ({ product }) => {
-  console.log(product);
+  // console.log(product);
   const {id, category, description, image, price, title, rating } = product;
   return (
     <div className="relative">

@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
 import { useForm } from "react-hook-form";
-import { AiOutlineMenu } from "react-icons/ai";
 import { BiSearchAlt2, BiShoppingBag } from "react-icons/bi";
 import { BsPerson } from "react-icons/bs";
-import { MdKeyboardArrowDown } from "react-icons/md";
 import DropDownBtn from "../DropDownBtn/DropDownBtn";
 import axios from "axios";
 import ClickDropDown from "../ClickDropDown/ClickDropDown";
@@ -46,7 +44,7 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52 bg-white"
             >
-              <ul className=" bg-white w-56 rounded-box z-10">
+              <ul className=" bg-white  rounded-box z-10">
                 <li>
                   <NavLink
                     className={({ isActive }) =>
