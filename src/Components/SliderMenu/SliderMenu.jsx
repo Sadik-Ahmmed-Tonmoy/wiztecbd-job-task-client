@@ -168,7 +168,7 @@ const SliderMenu = () => {
 
                 </div>
                 <div className=" mt-11">
-             <button className="text-white bg-[#F40F6F] w-full h-[42px]">All Reset</button>
+             <button className="text-white bg-[#F40F6F] w-full h-[42px]  mb-[100px]">All Reset</button>
              </div>
         </div>
     );

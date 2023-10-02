@@ -1,10 +1,18 @@
 import React from "react";
-import { Breadcrumb, Layout, Menu, Radio, Slider, theme } from "antd";
+import {
+  Breadcrumb,
+  FloatButton,
+  Layout,
+  Menu,
+  theme,
+} from "antd";
 import { Outlet } from "react-router-dom";
 import banner from "../../assets/Banner/banner.png";
 import Navbar from "../../Components/Navbar/Navbar";
 import SliderMenu from "../../Components/SliderMenu/SliderMenu";
 import Footer from "../../Components/Footer/Footer";
+import { AiOutlineArrowUp } from "react-icons/ai";
+import { Link } from "react-scroll";
 
 const { Header, Content, Sider } = Layout;
 
@@ -13,7 +21,7 @@ const Main = () => {
     token: { colorBgContainer },
   } = theme.useToken();
   return (
-    <div className="relative overflow-x-hidden">
+    <div id="top" className="relative overflow-x-hidden">
       <Navbar />
       <Layout className="min-h-screen bg-white">
         <Header
@@ -87,7 +95,21 @@ const Main = () => {
           </Layout>
         </div>
       </Layout>
-      <Footer/>
+      <Link
+        activeClass="active"
+        to="top"
+        spy={true}
+        smooth={true}
+        offset={50}
+        duration={500}
+      >
+        <FloatButton
+          className="-right-2 md:right-2 lg:right-8 hover:bg-[#FFBFCD] hover:text-[#F40F6F]"
+          icon={<AiOutlineArrowUp />}
+          onClick={() => console.log("click")}
+        />
+      </Link>
+      <Footer />
     </div>
   );
 };

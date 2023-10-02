@@ -45,19 +45,28 @@ const ShowProducts = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:ms-28">
         {showAllData
-          ? // Display all data when showAllData is true
-          allData.map((product, i) =>  <Card key={i} product={product}/>)
-          : // Display limited data when showAllData is false
-            limitedProducts.map((product, i) => 
-            <Card key={i} product={product}/>)}
+          ? allData.map((product, i) => <Card key={i} product={product} />)
+          : limitedProducts.map((product, i) => (
+              <Card key={i} product={product} />
+            ))}
       </div>
-   <div className="flex justify-center mt-9 mb-[100px]">
-   {showAllData ? (
-        <button className="text-[#913BDB] text-center border border-[#913BDB] py-3 px-[72px]" onClick={handleShowLess}>Show Less</button>
-      ) : (
-        <button className="text-[#913BDB] text-center border border-[#913BDB] py-3 px-[72px]" onClick={handleLoadMore}>Load More</button>
-      )}
-   </div>
+      <div className="flex justify-center mt-9 mb-[100px]">
+        {showAllData ? (
+          <button
+            className="text-[#913BDB] text-center border border-[#913BDB] py-3 px-[72px] hover:rounded-lg hover:font-semibold"
+            onClick={handleShowLess}
+          >
+            Show Less
+          </button>
+        ) : (
+          <button
+            className="text-[#913BDB] text-center border border-[#913BDB] py-3 px-[72px] hover:rounded-lg hover:font-semibold"
+            onClick={handleLoadMore}
+          >
+            Load More
+          </button>
+        )}
+      </div>
     </div>
   );
 };

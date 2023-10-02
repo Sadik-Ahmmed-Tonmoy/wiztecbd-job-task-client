@@ -11,7 +11,7 @@ const Card = ({ product }) => {
   return (
     <div className="relative">
       <img className="absolute z-10" src={saleBG} alt="" />
-      <div className="card card-compact shadow-xl lg:w-10/12 p-3 border border-[#FF87A6] rounded-lg  hover:shadow-2xl mb-4">
+      <div className="card min-w-min card-compact shadow-xl lg:w-10/12 p-3 border border-[#FF87A6] rounded-lg  hover:shadow-2xl mb-4">
         <div className="md:h-[220px] w-full border mx-auto rounded-lg">
           <img
             className="w-full h-full object-fill rounded-lg shrink-0"
