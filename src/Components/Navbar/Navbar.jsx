@@ -46,16 +46,16 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow  rounded-box w-52 bg-white"
             >
               <ul className=" bg-white  rounded-box z-10">
-                <li>
-                  <NavLink
-                    className={({ isActive }) =>
-                      isActive ? "text-blue-600 font-bold" : ""
-                    }
-                    to={`/`}
-                  >
-                    Home
-                  </NavLink>
-                </li>
+                <li className="my-2 w-52 rounded-md">
+                <NavLink
+                to={`/`}
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-600 font-bold" : ""
+                  }
+                >
+                 <span className="text-[#471D6B] capitalize">All Products</span>
+                </NavLink>
+              </li>
                 <ClickDropDown title={"CATEGORIES"} items={categories} />
               </ul>
             </ul>
@@ -64,16 +64,13 @@ const Navbar = () => {
             <img src={logo} alt="" />
           </Link>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end gap-1">
           <div className="flex rounded-full border border-black p-2">
             {/* <Link to={"/login"}> */}
                 <BsPerson className="font-semibold text-black" size={20} />
             {/* </Link> */}
-
-            {/* cart with drawer */}
-{/* <CartFromLS/> */}
-              {/* cart with drawer */}
           </div>
+          <CartFromLS/>
         </div>
       </div>
       {/* mobile screen end */}

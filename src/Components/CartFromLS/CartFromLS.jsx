@@ -73,7 +73,7 @@ const CartFromLS = () => {
   return (
     <div>
       <div onClick={showDrawer} className="dropdown dropdown-end md:mx-6 z-10">
-      <div className="badge border-[#F40F6F] bg-[#F40F6F] h-10 w-[123px] gap-1 text-white">
+      <div className="badge border-[#F40F6F] bg-[#F40F6F] h-10 md:w-[123px] gap-1 text-white">
               <BiShoppingBag />
               Cart <span>{products.length}</span>
             </div>
