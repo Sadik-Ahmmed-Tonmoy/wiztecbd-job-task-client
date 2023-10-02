@@ -42,7 +42,7 @@ const Card = ({ product }) => {
             {title.slice(0, 22)}
           </h2>
           <div className="flex items-center gap-1 mb-[14px]">
-            <Rate disabled allowHalf defaultValue={rating?.rate} />
+            <Rate className="text-[#FFAC0A]" disabled allowHalf defaultValue={rating?.rate} />
             <span className="text-black text-sm">({rating?.count})</span>
           </div>
           <div className="flex items-center flex-wrap gap-2">
