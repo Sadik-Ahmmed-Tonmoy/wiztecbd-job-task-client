@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import banner from "../../assets/Banner/banner.png";
 import Navbar from "../../Components/Navbar/Navbar";
 import SliderMenu from "../../Components/SliderMenu/SliderMenu";
+import Footer from "../../Components/Footer/Footer";
 
 const { Header, Content, Sider } = Layout;
 
@@ -86,6 +87,7 @@ const Main = () => {
           </Layout>
         </div>
       </Layout>
+      <Footer/>
     </div>
   );
 };

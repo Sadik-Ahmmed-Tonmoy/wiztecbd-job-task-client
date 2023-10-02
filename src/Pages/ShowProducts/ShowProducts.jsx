@@ -43,7 +43,7 @@ const ShowProducts = () => {
           ]}
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:ms-28">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:ms-28">
         {showAllData
           ? // Display all data when showAllData is true
           allData.map((product, i) =>  <Card key={i} product={product}/>)

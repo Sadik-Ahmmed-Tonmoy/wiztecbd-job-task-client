@@ -57,11 +57,7 @@ const Navbar = () => {
                     Home
                   </NavLink>
                 </li>
-               
                 <ClickDropDown title={"CATEGORIES"} items={categories} />
-                {/* <ClickDropDown title={"Laptop"} items={laptop} />
-                <ClickDropDown title={"Drones"} items={drones} />
-                <ClickDropDown title={"Accessories"} items={accessories} /> */}
               </ul>
             </ul>
           </div>
